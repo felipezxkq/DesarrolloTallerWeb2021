@@ -13,7 +13,8 @@ var api = express.Router();
 //  Guardar Persona
 api.post('/autos', autoController.guardar);
 api.get('/autos', autoController.listar);
- api.get('/auto/:id', autoController.recupera);
+api.get('/autosmarca', autoController.listarConMarca);
+api.get('/auto/:id', autoController.recupera);
 
 
 

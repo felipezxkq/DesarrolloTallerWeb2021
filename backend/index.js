@@ -11,6 +11,7 @@ const app = express()
 var persona_route = require('./routes/personaRoute');
 var auto_route = require('./routes/autoRoute');
 var libro_route = require('./routes/libroRoute');
+var marca_route = require('./routes/marcaRoute');
 
 const mongoose = require('mongoose')
 
@@ -24,6 +25,7 @@ app.use(bodyParser.json())
 app.use('/api',persona_route);
 app.use('/api',auto_route);
 app.use('/api',libro_route);
+app.use('/api',marca_route);
 
 
 const options = {

@@ -8,7 +8,7 @@ function guardar(req,res){
       
         let auto = new Auto()
         auto.patente = req.body.patente
-        auto.marca = req.body.marca
+        auto.marca = req.body.idMarca
         auto.anio = req.body.anio
 
         auto.save((err, autostore) => {
@@ -30,6 +30,14 @@ function guardar(req,res){
             res.status(200).send({ autos })
         })
     }
+
+    function listarConMarca(req,res){
+        Auto.find()
+          .populate('marca').exec((err, autoConMarca) => {
+            res.status(200).send({ autoConMarca })
+          })
+      }
+
     function recupera(req,res)
     {
         let idauto = req.params.id
@@ -44,5 +52,6 @@ function guardar(req,res){
     module.exports = {
         guardar,
         listar,
+        listarConMarca,
         recupera
     };

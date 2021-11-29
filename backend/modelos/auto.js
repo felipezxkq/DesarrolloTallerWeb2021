@@ -8,13 +8,10 @@ const AutoSchema = Schema(
         type:String,
         required: true
       },
-      marca:{
-        type:String,
-        required: true
-      },
       anio:{type:Number, min: 5},
+      marca: { type: Schema.ObjectId, ref: "marca" }
       
     })
 
-module.exports = mongoose.model('autos',AutoSchema)    
+module.exports = mongoose.model('auto',AutoSchema)    
 
