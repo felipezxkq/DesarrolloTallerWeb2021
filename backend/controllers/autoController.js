@@ -33,8 +33,8 @@ function guardar(req,res){
 
     function listarConMarca(req,res){
         Auto.find()
-          .populate('marca').exec((err, autoConMarca) => {
-            res.status(200).send({ autoConMarca })
+          .populate('marca').exec((err, autos) => {
+            res.status(200).send({ autos })
           })
       }
 
